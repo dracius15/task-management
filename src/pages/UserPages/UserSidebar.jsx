@@ -15,9 +15,14 @@ const UserSidebar = () => {
   ];
 
   return (
-    <div className="w-64 bg-black/40 backdrop-blur-lg h-screen shadow-2xl border-r border-white/10">
+    <div className="w-64 bg-black/80 backdrop-blur-xl h-screen shadow-[0_0_50px_rgba(0,0,255,0.3)] border-r border-blue-500/20 relative z-20">
+      {/* Glowing border effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-purple-500/5 to-blue-500/5"></div>
+      
       <div className="p-6">
-        <h2 className="text-2xl font-bold text-white/90">User Panel</h2>
+        <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">
+          User Panel
+        </h2>
       </div>
 
       <nav className="mt-6">
@@ -26,13 +31,13 @@ const UserSidebar = () => {
             <li key={path}>
               <Link
                 to={path}
-                className={`flex items-center px-6 py-3 text-white/70 hover:bg-white/5 transition-all ${
+                className={`flex items-center px-6 py-3 text-blue-400/80 hover:bg-blue-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] group ${
                   location.pathname === path
-                    ? "bg-blue-900/50 shadow-lg transform scale-105"
+                    ? "bg-blue-500/20 shadow-[0_0_20px_rgba(59,130,246,0.3)] transform scale-105"
                     : ""
                 }`}
               >
-                <span className="mr-3">{icon}</span>
+                <span className="mr-3 group-hover:scale-110 transition-transform duration-300">{icon}</span>
                 {label}
               </Link>
             </li>
@@ -40,9 +45,9 @@ const UserSidebar = () => {
           <li>
             <button
               onClick={handleLogout}
-              className="flex items-center px-6 py-3 text-white/70 hover:bg-white/5 transition-all w-full text-left"
+              className="flex items-center px-6 py-3 text-blue-400/80 hover:bg-blue-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] w-full text-left group"
             >
-              <span className="mr-3">🚪</span>
+              <span className="mr-3 group-hover:scale-110 transition-transform duration-300">🚪</span>
               Logout
             </button>
           </li>
