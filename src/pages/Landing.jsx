@@ -27,18 +27,6 @@ const Landing = () => {
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold text-white/90">Task Management</h1>
           <div className="space-x-4">
-            <Link
-              to="/login"
-              className="text-white/80 hover:text-white transition-colors"
-            >
-              Login
-            </Link>
-            <Link
-              to="/register"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Sign Up
-            </Link>
           </div>
         </div>
       </nav>
@@ -51,12 +39,6 @@ const Landing = () => {
         <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
           Organize tasks, track progress, and collaborate seamlessly with our powerful task management platform.
         </p>
-        <Link
-          to="/register"
-          className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors inline-block shadow-lg hover:shadow-xl"
-        >
-          Get Started
-        </Link>
       </div>
 
       {/* Features Section */}
