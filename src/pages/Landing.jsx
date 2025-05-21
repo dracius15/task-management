@@ -94,19 +94,12 @@ const Landing = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-black/40 backdrop-blur-lg py-8 border-t border-white/10">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-white/50">
-            © 2024 Task Management. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      
 
       {/* Testimonials Section */}
-      <div className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+      <div className="py-16 bg-black/40 backdrop-blur-lg border-t border-white/10">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gray-800">🌟 What Our Users Say</h2>
+          <h2 className="text-4xl font-bold mb-6 text-white/90">🌟 What Our Users Say</h2>
           <div className="flex gap-8">
             {[
               { name: "John Doe", text: "TaskFlow has streamlined our team's workflow!" },
@@ -115,11 +108,11 @@ const Landing = () => {
             ].map((testimonial, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-black/30 p-8 rounded-lg border border-white/10 hover:bg-black/40 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
               >
-                <p className="text-lg text-gray-600 italic">"{testimonial.text}"</p>
-                <h4 className="mt-4 text-xl text-gray-800 font-semibold">- {testimonial.name}</h4>
+                <p className="text-lg text-white/70 italic">"{testimonial.text}"</p>
+                <h4 className="mt-4 text-xl text-white/90 font-semibold">- {testimonial.name}</h4>
               </motion.div>
             ))}
           </div>
@@ -127,17 +120,17 @@ const Landing = () => {
       </div>
 
       {/* Role Selection Section */}
-      <div className="py-16 max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-6 text-gray-800">Choose Your Role</h2>
+      <div className="py-16 max-w-7xl mx-auto px-6 bg-black/40 backdrop-blur-lg border-t border-white/10">
+        <h2 className="text-4xl font-bold text-center mb-6 text-white/90">Choose Your Role</h2>
         <div className="mt-8 grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
           {["user", "admin"].map((role) => (
             <motion.div
               key={role}
-              className="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gradient-to-r hover:border-blue-400 hover:border-purple-400"
+              className="relative bg-black/30 p-8 rounded-xl border border-white/10 hover:bg-black/40 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
             >
-              <h3 className="text-2xl font-semibold capitalize text-gray-800">{role === "user" ? "Team Member" : "Administrator"}</h3>
-              <p className="mt-3 text-gray-600">
+              <h3 className="text-2xl font-semibold capitalize text-white/90">{role === "user" ? "Team Member" : "Administrator"}</h3>
+              <p className="mt-3 text-white/70">
                 {role === "user"
                   ? "Create tasks, track progress, and collaborate with your team."
                   : "Manage users, verify tasks, and oversee team operations."}
@@ -145,13 +138,13 @@ const Landing = () => {
               <div className="mt-6 space-y-4">
                 <button
                   onClick={() => navigate("/signup", { state: { role } })}
-                  className="w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-md shadow-md hover:opacity-90 transition"
+                  className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold rounded-md shadow-md hover:from-blue-700 hover:to-blue-900 transition-colors"
                 >
                   Sign Up as {role.charAt(0).toUpperCase() + role.slice(1)}
                 </button>
                 <button
                   onClick={() => navigate("/login", { state: { role } })}
-                  className="w-full py-3 border border-gray-400 text-gray-800 font-semibold rounded-md shadow-md hover:bg-gray-200 transition"
+                  className="w-full py-3 border border-white/20 text-white/80 font-semibold rounded-md shadow-md hover:bg-white/10 transition-colors"
                 >
                   Log In as {role.charAt(0).toUpperCase() + role.slice(1)}
                 </button>
@@ -162,9 +155,9 @@ const Landing = () => {
       </div>
 
       {/* Features Section */}
-      <div className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+      <div className="py-16 bg-black/40 backdrop-blur-lg border-t border-white/10">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gray-800">✨ Features That Power Your Productivity</h2>
+          <h2 className="text-4xl font-bold mb-6 text-white/90">✨ Features That Power Your Productivity</h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-3">
             {[
               { title: "Task Management", description: "Create, organize, and prioritize tasks efficiently." },
@@ -173,81 +166,23 @@ const Landing = () => {
             ].map((feature, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition"
+                className="bg-black/30 p-6 rounded-lg border border-white/10 hover:bg-black/40 transition-all"
                 whileHover={{ scale: 1.05 }}
               >
-                <h3 className="text-xl font-semibold text-gray-800">{feature.title}</h3>
-                <p className="mt-2 text-gray-600">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-white/90">{feature.title}</h3>
+                <p className="mt-2 text-white/70">{feature.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* FAQ Section */}
-      <div className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">❓ Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {[
-              { question: "Is TaskFlow free to use?", answer: "Yes! TaskFlow offers a free plan with core features." },
-              { question: "Can I use TaskFlow for my team?", answer: "Absolutely! TaskFlow supports team collaboration." },
-              { question: "How can I get support?", answer: "You can contact us via email or our support center." },
-            ].map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white p-4 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-all duration-300"
-                onClick={() => toggleFAQ(index)}
-              >
-                <h3 className="text-lg font-semibold text-gray-800 flex justify-between">
-                  {faq.question}
-                  <span>{activeFAQ === index ? "−" : "+"}</span>
-                </h3>
-                {activeFAQ === index && <p className="mt-2 text-gray-600">{faq.answer}</p>}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Contact Section */}
-      <div className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="max-w-5xl mx-auto text-center px-6">
-          <h2 className="text-4xl font-bold text-gray-800">📩 Contact Us</h2>
-          <p className="mt-4 text-lg text-gray-600">Have questions? We'd love to hear from you.</p>
-          <motion.form
-            className="mt-8 space-y-4 max-w-3xl mx-auto bg-white bg-opacity-80 backdrop-blur-sm p-6 rounded-lg shadow-lg"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full p-3 bg-gray-200 border-none rounded-md focus:ring-2 focus:ring-indigo-500 text-gray-800"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full p-3 bg-gray-200 border-none rounded-md focus:ring-2 focus:ring-indigo-500 text-gray-800"
-            />
-            <textarea
-              placeholder="Your Message"
-              className="w-full p-3 bg-gray-200 border-none rounded-md focus:ring-2 focus:ring-indigo-500 text-gray-800 h-32"
-            ></textarea>
-            <button
-              type="submit"
-              className="w-full py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-md hover:opacity-90 transition"
-            >
-              Send Message
-            </button>
-          </motion.form>
-        </div>
-      </div>
+      
 
       {/* Scroll to Top Button */}
       <motion.div
-        className="fixed bottom-10 right-10 bg-indigo-500 text-white p-3 rounded-full cursor-pointer"
+        className="fixed bottom-10 right-10 bg-blue-600 text-white p-3 rounded-full cursor-pointer hover:bg-blue-700 transition-colors"
         onClick={scrollToTop}
         whileHover={{ scale: 1.1 }}
       >
