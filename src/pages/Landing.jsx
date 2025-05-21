@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -20,20 +21,87 @@ const Landing = () => {
 
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-purple-50 text-gray-900">
-      <div className="relative flex flex-col items-center justify-center text-center py-20 px-6">
-        <motion.h1
-          className="text-6xl font-extrabold leading-tight bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text drop-shadow-lg"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Welcome to <span className="block">TaskFlow</span>
-        </motion.h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl">
-          Boost productivity, streamline workflow, and collaborate in real-time.
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-zinc-900">
+      {/* Navigation */}
+      <nav className="bg-black/40 backdrop-blur-lg p-4 border-b border-white/10">
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-white/90">Task Management</h1>
+          <div className="space-x-4">
+            <Link
+              to="/login"
+              className="text-white/80 hover:text-white transition-colors"
+            >
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Sign Up
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 py-20 text-center">
+        <h1 className="text-5xl font-bold text-white/90 mb-6">
+          Streamline Your Workflow
+        </h1>
+        <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+          Organize tasks, track progress, and collaborate seamlessly with our powerful task management platform.
         </p>
+        <Link
+          to="/register"
+          className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors inline-block shadow-lg hover:shadow-xl"
+        >
+          Get Started
+        </Link>
       </div>
+
+      {/* Features Section */}
+      <div className="bg-black/40 backdrop-blur-lg py-16 border-t border-white/10">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white/90 text-center mb-12">Key Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-black/30 p-6 rounded-lg border border-white/10 hover:bg-black/40 transition-all">
+              <div className="text-4xl mb-4">📊</div>
+              <h3 className="text-xl font-semibold text-white/90 mb-2">Task Tracking</h3>
+              <p className="text-white/70">
+                Monitor progress and deadlines with our intuitive task tracking system.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-black/30 p-6 rounded-lg border border-white/10 hover:bg-black/40 transition-all">
+              <div className="text-4xl mb-4">👥</div>
+              <h3 className="text-xl font-semibold text-white/90 mb-2">Team Collaboration</h3>
+              <p className="text-white/70">
+                Work together seamlessly with real-time updates and shared workspaces.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-black/30 p-6 rounded-lg border border-white/10 hover:bg-black/40 transition-all">
+              <div className="text-4xl mb-4">📱</div>
+              <h3 className="text-xl font-semibold text-white/90 mb-2">Mobile Access</h3>
+              <p className="text-white/70">
+                Stay connected and manage tasks on the go with our mobile-friendly interface.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-black/40 backdrop-blur-lg py-8 border-t border-white/10">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-white/50">
+            © 2024 Task Management. All rights reserved.
+          </p>
+        </div>
+      </footer>
 
       {/* Testimonials Section */}
       <div className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
