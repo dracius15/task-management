@@ -160,7 +160,7 @@ npm i jsonwebtoken mongoose
 npm install crypto nodemailer
 ```
 ## Deployment Link  
-https://zidio-task-management-system.vercel.app/
+https://task-management-lsx1og2hb-divam-yadavs-projects.vercel.app
 ---
 
 ## 🚀 Features Breakdown  
