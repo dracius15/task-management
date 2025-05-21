@@ -20,10 +20,10 @@ const Landing = () => {
 
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-200 to-white text-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-purple-50 text-gray-900">
       <div className="relative flex flex-col items-center justify-center text-center py-20 px-6">
         <motion.h1
-          className="text-6xl font-extrabold leading-tight bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text"
+          className="text-6xl font-extrabold leading-tight bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text drop-shadow-lg"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -36,7 +36,7 @@ const Landing = () => {
       </div>
 
       {/* Testimonials Section */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6 text-gray-800">🌟 What Our Users Say</h2>
           <div className="flex gap-8">
@@ -47,10 +47,10 @@ const Landing = () => {
             ].map((testimonial, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-lg"
+                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
               >
-                <p className="text-lg text-gray-600 italic">“{testimonial.text}”</p>
+                <p className="text-lg text-gray-600 italic">"{testimonial.text}"</p>
                 <h4 className="mt-4 text-xl text-gray-800 font-semibold">- {testimonial.name}</h4>
               </motion.div>
             ))}
@@ -65,7 +65,7 @@ const Landing = () => {
           {["user", "admin"].map((role) => (
             <motion.div
               key={role}
-              className="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="relative bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gradient-to-r hover:border-blue-400 hover:border-purple-400"
               whileHover={{ scale: 1.05 }}
             >
               <h3 className="text-2xl font-semibold capitalize text-gray-800">{role === "user" ? "Team Member" : "Administrator"}</h3>
@@ -94,7 +94,7 @@ const Landing = () => {
       </div>
 
       {/* Features Section */}
-      <div className="py-16 bg-gray-100">
+      <div className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6 text-gray-800">✨ Features That Power Your Productivity</h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-3">
@@ -117,7 +117,7 @@ const Landing = () => {
       </div>
 
       {/* FAQ Section */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">❓ Frequently Asked Questions</h2>
           <div className="space-y-4">
@@ -128,7 +128,7 @@ const Landing = () => {
             ].map((faq, index) => (
               <div
                 key={index}
-                className="bg-white p-4 rounded-lg shadow-md cursor-pointer"
+                className="bg-white p-4 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-all duration-300"
                 onClick={() => toggleFAQ(index)}
               >
                 <h3 className="text-lg font-semibold text-gray-800 flex justify-between">
@@ -143,12 +143,12 @@ const Landing = () => {
       </div>
 
       {/* Contact Section */}
-      <div className="py-16 bg-gray-100">
+      <div className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-5xl mx-auto text-center px-6">
           <h2 className="text-4xl font-bold text-gray-800">📩 Contact Us</h2>
-          <p className="mt-4 text-lg text-gray-600">Have questions? We’d love to hear from you.</p>
+          <p className="mt-4 text-lg text-gray-600">Have questions? We'd love to hear from you.</p>
           <motion.form
-            className="mt-8 space-y-4 max-w-3xl mx-auto"
+            className="mt-8 space-y-4 max-w-3xl mx-auto bg-white bg-opacity-80 backdrop-blur-sm p-6 rounded-lg shadow-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}

@@ -74,13 +74,13 @@ const UserPage = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-purple-50">
       <UserSidebar />
 
       <div className="flex-1 p-6">
         <h1 className="text-4xl font-bold mb-6 text-center w-full">
           <span>🎯</span> 
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text drop-shadow-lg">
             User Task Management
           </span>
         </h1>

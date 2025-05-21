@@ -32,7 +32,7 @@ const NotificationsPage = () => {
   }, []);
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-purple-50">
       {/* Sidebar */}
       <UserSidebar />
 

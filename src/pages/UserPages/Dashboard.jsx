@@ -105,11 +105,11 @@ const UserDashboard = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-blue-100 to-gray-100">
+    <div className="flex min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-purple-50">
       <UserSidebar />
 
       <div className="flex-1 p-6">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+        <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text drop-shadow-lg">
           🚀 User Dashboard
         </h2>
         <ToastContainer position="top-right" autoClose={5000} hideProgressBar />
@@ -142,12 +142,12 @@ const UserDashboard = () => {
           </div>
 
           {/* Notes */}
-          <div className="p-6 w-full lg:w-[590px] bg-green-900 text-white rounded-xl border-[12px] border-[#8B4501] shadow-lg flex flex-col">
-            <h2 className="text-2xl font-bold text-yellow-400 mb-2 text-center">📌 Notes</h2>
+          <div className="p-6 w-full lg:w-[590px] bg-white shadow-lg rounded-xl border border-gray-300 flex flex-col">
+            <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">📌 Notes</h2>
 
             {/* Notes Input Field - Enlarged to match Task Analytics */}
             <textarea
-              className="flex-1 bg-transparent border-none outline-none text-white text-lg p-7"
+              className="flex-1 bg-transparent border-none outline-none text-gray-800 text-lg p-7"
               placeholder="Write your notes here..."
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
