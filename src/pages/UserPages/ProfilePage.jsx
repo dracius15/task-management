@@ -45,46 +45,46 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-purple-50">
+    <div className="flex min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-900">
       {/* Sidebar */}
       <UserSidebar />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center p-6">
-        <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-3xl">
-          <h2 className="text-2xl font-bold mb-4 text-center">👤 Profile</h2>
+        <div className="bg-white/10 backdrop-blur-lg shadow-2xl rounded-2xl p-8 w-full max-w-3xl border border-white/20">
+          <h2 className="text-2xl font-bold mb-6 text-center text-white">👤 Profile</h2>
 
           {profile ? (
             <div className="space-y-4">
               <div className="flex items-center justify-center mb-6">
-                <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-3xl text-blue-600">
+                <div className="w-24 h-24 bg-gradient-to-br from-pink-500 to-yellow-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-3xl text-white">
                     {profile.name.charAt(0).toUpperCase()}
                   </span>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-500">Name</p>
-                  <p className="font-semibold">{profile.name}</p>
+                <div className="p-4 bg-white/5 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
+                  <p className="text-sm text-white/60">Name</p>
+                  <p className="font-semibold text-white">{profile.name}</p>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-500">Email</p>
-                  <p className="font-semibold">{profile.email}</p>
+                <div className="p-4 bg-white/5 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
+                  <p className="text-sm text-white/60">Email</p>
+                  <p className="font-semibold text-white">{profile.email}</p>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-500">Role</p>
-                  <p className="font-semibold capitalize">{profile.role}</p>
+                <div className="p-4 bg-white/5 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
+                  <p className="text-sm text-white/60">Role</p>
+                  <p className="font-semibold capitalize text-white">{profile.role}</p>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-500">Department</p>
-                  <p className="font-semibold">{profile.department}</p>
+                <div className="p-4 bg-white/5 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
+                  <p className="text-sm text-white/60">Department</p>
+                  <p className="font-semibold text-white">{profile.department}</p>
                 </div>
               </div>
             </div>
           ) : (
-            <p className="text-gray-500 text-center">Loading profile...</p>
+            <p className="text-white/80 text-center">Loading profile...</p>
           )}
         </div>
       </div>

@@ -32,23 +32,23 @@ const NotificationsPage = () => {
   }, []);
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-purple-50">
+    <div className="flex min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-900">
       {/* Sidebar */}
       <UserSidebar />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center p-6">
-        <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-3xl">
-          <h2 className="text-2xl font-bold mb-4 text-center">📢 Notifications</h2>
+        <div className="bg-white/10 backdrop-blur-lg shadow-2xl rounded-2xl p-8 w-full max-w-3xl border border-white/20">
+          <h2 className="text-2xl font-bold mb-6 text-center text-white">📢 Notifications</h2>
 
           {notifications.length === 0 ? (
-            <p className="text-gray-500 text-center">No new notifications</p>
+            <p className="text-white/80 text-center">No new notifications</p>
           ) : (
             <ul className="space-y-3">
               {notifications.map((message, index) => (
                 <li
                   key={index}
-                  className="p-4 bg-blue-50 border-l-4 border-blue-500 rounded shadow-sm text-gray-800"
+                  className="p-4 bg-white/5 border-l-4 border-pink-500 rounded-xl shadow-lg text-white hover:bg-white/10 transition-all"
                 >
                   {message}
                 </li>

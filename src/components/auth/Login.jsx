@@ -52,49 +52,40 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 p-6">
-      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-md transform transition duration-300 hover:scale-105">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-          {role === "admin" ? "Admin Login" : "User Login"}
-        </h2>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-900">
+      <div className="bg-white/10 backdrop-blur-lg shadow-2xl rounded-2xl p-8 w-full max-w-md border border-white/20">
+        <h2 className="text-2xl font-bold mb-6 text-center text-white">Login</h2>
 
         {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-gray-700 text-sm font-medium">Email</label>
+            <label className="block text-sm font-medium text-white/80">Email</label>
             <input
               type="email"
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none shadow-sm"
-              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-3 bg-white/5 border border-white/20 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none text-white placeholder-white/50"
               required
             />
           </div>
 
           <div>
-            <label className="block text-gray-700 text-sm font-medium">Password</label>
+            <label className="block text-sm font-medium text-white/80">Password</label>
             <input
               type="password"
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none shadow-sm"
-              placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-3 bg-white/5 border border-white/20 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none text-white placeholder-white/50"
               required
             />
           </div>
 
           <button
             type="submit"
-            className={`w-full py-2 rounded-md shadow-md transition duration-200 text-white ${
-              loading
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90"
-            }`}
-            disabled={loading}
+            className="w-full bg-gradient-to-r from-pink-500 to-yellow-500 text-white p-3 rounded-xl font-semibold text-lg hover:from-pink-600 hover:to-yellow-600 transition-all shadow-lg hover:shadow-xl"
           >
-            {loading ? "Logging in..." : "Login"}
+            Login
           </button>
         </form>
 

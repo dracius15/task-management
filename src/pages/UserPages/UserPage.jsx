@@ -74,13 +74,13 @@ const UserPage = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-purple-50">
+    <div className="flex min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-900">
       <UserSidebar />
 
       <div className="flex-1 p-6">
-        <h1 className="text-4xl font-bold mb-6 text-center w-full">
+        <h1 className="text-4xl font-bold mb-6 text-center w-full text-white">
           <span>🎯</span> 
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text drop-shadow-lg">
+          <span className="bg-gradient-to-r from-pink-400 to-yellow-300 text-transparent bg-clip-text drop-shadow-lg">
             User Task Management
           </span>
         </h1>
@@ -88,15 +88,15 @@ const UserPage = () => {
         <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
 
         {/* Task Creation Box */}
-        <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg mb-8 border border-gray-200">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">Create a New Task</h2>
+        <div className="bg-white/10 backdrop-blur-lg shadow-2xl rounded-2xl p-8 w-full max-w-lg mb-8 border border-white/20">
+          <h2 className="text-2xl font-semibold text-white mb-6">Create a New Task</h2>
           <form onSubmit={handleCreateTask} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700">Task Title</label>
+              <label className="block text-sm font-medium text-white/80">Task Title</label>
               <input
                 type="text"
                 placeholder="Enter task title"
-                className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                className="w-full p-3 bg-white/5 border border-white/20 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none text-white placeholder-white/50"
                 value={newTask.title}
                 onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
                 required
@@ -104,10 +104,10 @@ const UserPage = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">Description</label>
+              <label className="block text-sm font-medium text-white/80">Description</label>
               <textarea
                 placeholder="Enter task description"
-                className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                className="w-full p-3 bg-white/5 border border-white/20 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none text-white placeholder-white/50"
                 value={newTask.description}
                 onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
                 required
@@ -116,9 +116,9 @@ const UserPage = () => {
 
             <div className="flex gap-4">
               <div className="w-1/2">
-                <label className="block text-sm font-medium text-gray-700">Priority</label>
+                <label className="block text-sm font-medium text-white/80">Priority</label>
                 <select
-                  className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                  className="w-full p-3 bg-white/5 border border-white/20 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none text-white"
                   value={newTask.priority}
                   onChange={(e) => setNewTask({ ...newTask, priority: e.target.value })}
                 >
@@ -129,10 +129,10 @@ const UserPage = () => {
               </div>
 
               <div className="w-1/2">
-                <label className="block text-sm font-medium text-gray-700">Deadline</label>
+                <label className="block text-sm font-medium text-white/80">Deadline</label>
                 <input
                   type="date"
-                  className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                  className="w-full p-3 bg-white/5 border border-white/20 rounded-xl focus:ring-2 focus:ring-pink-400 focus:outline-none text-white"
                   value={newTask.deadline}
                   onChange={(e) => setNewTask({ ...newTask, deadline: e.target.value })}
                   required
@@ -142,7 +142,7 @@ const UserPage = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-all"
+              className="w-full bg-gradient-to-r from-pink-500 to-yellow-500 text-white p-3 rounded-xl font-semibold text-lg hover:from-pink-600 hover:to-yellow-600 transition-all shadow-lg hover:shadow-xl"
             >
               ➕ Add Task
             </button>
@@ -152,43 +152,43 @@ const UserPage = () => {
         {/* Task List */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tasks.length === 0 ? (
-            <p className="text-gray-600">No tasks created yet. Start by adding a task!</p>
+            <p className="text-white/80">No tasks created yet. Start by adding a task!</p>
           ) : (
             tasks.map((task) => (
-              <div key={task.id} className="bg-white shadow-md p-4 rounded-md border-l-4 border-blue-400">
-                <h3 className="text-lg font-semibold">{task.title}</h3>
-                <p className="text-gray-600">{task.description}</p>
+              <div key={task.id} className="bg-white/10 backdrop-blur-lg shadow-xl p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
+                <h3 className="text-lg font-semibold text-white">{task.title}</h3>
+                <p className="text-white/80">{task.description}</p>
 
                 <span className={`text-sm ${getPriorityColor(task.priority)}`}>
                   Priority: {task.priority}
                 </span>
 
-                <p className="text-sm text-gray-700 mt-1">
+                <p className="text-sm text-white/80 mt-1">
                   <span className="font-semibold">Assigned To:</span> {task.assignedTo}
                 </p>
 
-                <p className="text-sm text-gray-700 mt-1">
+                <p className="text-sm text-white/80 mt-1">
                   <span className="font-semibold">Deadline:</span> {task.deadline}
                 </p>
 
                 {/* Task Progress */}
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700">Progress:</label>
+                  <label className="block text-sm font-medium text-white/80">Progress:</label>
                   <input
                     type="range"
                     min="0"
                     max="100"
                     value={task.progress}
                     onChange={(e) => updateProgress(task.id, e.target.value)}
-                    className="w-full mt-2 accent-blue-600"
+                    className="w-full mt-2 accent-pink-500"
                   />
-                  <span className="text-sm font-medium text-gray-700">{task.progress}% Completed</span>
+                  <span className="text-sm font-medium text-white/80">{task.progress}% Completed</span>
                 </div>
 
                 {/* Delete Button */}
                 <button
                   onClick={() => handleDeleteTask(task.id)}
-                  className="mt-4 w-full bg-red-600 text-white p-2 rounded-lg font-semibold hover:bg-red-700 transition-all"
+                  className="mt-4 w-full bg-gradient-to-r from-red-500 to-pink-500 text-white p-2 rounded-xl font-semibold hover:from-red-600 hover:to-pink-600 transition-all shadow-lg hover:shadow-xl"
                 >
                   🗑️ Delete Task
                 </button>

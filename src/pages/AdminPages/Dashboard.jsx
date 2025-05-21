@@ -7,13 +7,17 @@ import TaskChart from "../../components/admin/TaskAnalytics";
 
 const Dashboard = () => {
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-900">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content */}
       <div className="flex-1 p-6">
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">Admin Dashboard</h1>
+        <h1 className="text-4xl font-bold mb-6 text-white">
+          <span className="bg-gradient-to-r from-pink-400 to-yellow-300 text-transparent bg-clip-text drop-shadow-lg">
+            Admin Dashboard
+          </span>
+        </h1>
 
         {/* Admin Statistics */}
         <AdminStats />
