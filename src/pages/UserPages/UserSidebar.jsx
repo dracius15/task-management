@@ -15,9 +15,9 @@ const UserSidebar = () => {
   ];
 
   return (
-    <div className="w-64 bg-white/10 backdrop-blur-lg h-screen shadow-2xl border-r border-white/20">
+    <div className="w-64 bg-black/40 backdrop-blur-lg h-screen shadow-2xl border-r border-white/10">
       <div className="p-6">
-        <h2 className="text-2xl font-bold text-white">User Panel</h2>
+        <h2 className="text-2xl font-bold text-white/90">User Panel</h2>
       </div>
 
       <nav className="mt-6">
@@ -26,9 +26,9 @@ const UserSidebar = () => {
             <li key={path}>
               <Link
                 to={path}
-                className={`flex items-center px-6 py-3 text-white/80 hover:bg-white/10 transition-all ${
+                className={`flex items-center px-6 py-3 text-white/70 hover:bg-white/5 transition-all ${
                   location.pathname === path
-                    ? "bg-blue-600 shadow-lg transform scale-105"
+                    ? "bg-blue-900/50 shadow-lg transform scale-105"
                     : ""
                 }`}
               >
@@ -40,7 +40,7 @@ const UserSidebar = () => {
           <li>
             <button
               onClick={handleLogout}
-              className="flex items-center px-6 py-3 text-white/80 hover:bg-white/10 transition-all w-full text-left"
+              className="flex items-center px-6 py-3 text-white/70 hover:bg-white/5 transition-all w-full text-left"
             >
               <span className="mr-3">🚪</span>
               Logout

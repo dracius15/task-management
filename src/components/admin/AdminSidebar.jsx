@@ -1,6 +1,6 @@
-  <div className="w-64 bg-white/10 backdrop-blur-lg h-screen shadow-2xl border-r border-white/20">
+  <div className="w-64 bg-black/40 backdrop-blur-lg h-screen shadow-2xl border-r border-white/10">
     <div className="p-6">
-      <h2 className="text-2xl font-bold text-white">Admin Panel</h2>
+      <h2 className="text-2xl font-bold text-white/90">Admin Panel</h2>
     </div>
 
     <nav className="mt-6">
@@ -8,7 +8,7 @@
         <li>
           <Link
             to="/admin/dashboard"
-            className="flex items-center px-6 py-3 text-white/80 hover:bg-white/10 transition-all"
+            className="flex items-center px-6 py-3 text-white/70 hover:bg-white/5 transition-all"
           >
             <span className="mr-3">📊</span>
             Dashboard
@@ -17,7 +17,7 @@
         <li>
           <Link
             to="/admin/users"
-            className="flex items-center px-6 py-3 text-white/80 hover:bg-white/10 transition-all"
+            className="flex items-center px-6 py-3 text-white/70 hover:bg-white/5 transition-all"
           >
             <span className="mr-3">👥</span>
             Users
@@ -26,7 +26,7 @@
         <li>
           <Link
             to="/admin/tasks"
-            className="flex items-center px-6 py-3 text-white/80 hover:bg-white/10 transition-all"
+            className="flex items-center px-6 py-3 text-white/70 hover:bg-white/5 transition-all"
           >
             <span className="mr-3">✅</span>
             Tasks
@@ -35,7 +35,7 @@
         <li>
           <Link
             to="/admin/reports"
-            className="flex items-center px-6 py-3 text-white/80 hover:bg-white/10 transition-all"
+            className="flex items-center px-6 py-3 text-white/70 hover:bg-white/5 transition-all"
           >
             <span className="mr-3">📈</span>
             Reports
@@ -44,7 +44,7 @@
         <li>
           <button
             onClick={handleLogout}
-            className="flex items-center px-6 py-3 text-white/80 hover:bg-white/10 transition-all w-full text-left"
+            className="flex items-center px-6 py-3 text-white/70 hover:bg-white/5 transition-all w-full text-left"
           >
             <span className="mr-3">🚪</span>
             Logout
